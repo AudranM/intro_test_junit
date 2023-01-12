@@ -10,7 +10,13 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Ignore;
 
+/**
+ *Réponse Question 3 du TP:
+ * 1- Lors de l'ajout de @Ignore, NetBeans nous propose l'import de org.junit.Ignore.
+ * 2- Cela permet de skip le test et de ne pas retourner d'erreurs mais cela ne valide pas le test global à 100% pour autant.
+*/
 /**
  *
  * @author audranmalosse
@@ -39,6 +45,7 @@ public class Test_Personne {
     /**
      * Test of getNumero method, of class Personne.
      */
+    @Ignore
     @Test
     public void testGetNumero() {
         fail("Test à implémenter plus tard");
@@ -74,6 +81,7 @@ public class Test_Personne {
     /**
      * Test of getDernierNum method, of class Personne.
      */
+    @Ignore
     @Test
     public void testGetDernierNum() {
         fail("Test à implémenter plus tard");
@@ -82,6 +90,7 @@ public class Test_Personne {
     /**
      * Test of setNumPers method, of class Personne.
      */
+    @Ignore
     @Test
     public void testSetNumPers() {
         Personne alan = new Personne("Turing", "Alan", 1912);

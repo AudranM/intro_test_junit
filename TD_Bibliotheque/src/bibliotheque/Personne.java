@@ -15,25 +15,27 @@ public class Personne {
     private String nomPers, prenomPers;
     private static int dernierNumero;
     
-    Personne(String nom, String prenom, int anneeNaissance){
-        
+    public Personne(String nom, String prenom, int anneeNaissance){
+        this.setNomPers(nom);
+        this.setPrenomPers(prenom);
+        this.setAnNaissance(anneeNaissance);
     }
     
     //SETTERS
     public void setNumPers(int numero){
-        
+        this.numeroPers = numero;
     }
     
     public void setNomPers(String nom){
-        
+        this.nomPers = nom;
     }
     
     public void setPrenomPers(String prenom){
-        
+        this.prenomPers = prenom;
     }
     
     public void setAnNaissance(int annee){
-        
+        this.anNaissance = annee;
     }
     
     //GETTERS
@@ -44,7 +46,7 @@ public class Personne {
     
     public int getNumero(){
         
-        return 1;
+        return -1;
     }
     
     public String getNom(){
@@ -59,13 +61,13 @@ public class Personne {
     
     public int getAnNaissance(){
         
-        return -1;
+        return anNaissance;
     }
     
     @Override
     public String toString(){
         
-        return "rien";
+        return this.getNom()+", "+this.getPrenom()+", "+this.getAnNaissance();
     }
    
 }
