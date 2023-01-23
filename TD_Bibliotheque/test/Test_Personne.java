@@ -15,15 +15,28 @@ import org.junit.Ignore;
 /**
  *Réponse Question 3 du TP:
  * 1- Lors de l'ajout de @Ignore, NetBeans nous propose l'import de org.junit.Ignore.
- * 2- Cela permet de skip le test et de ne pas retourner d'erreurs mais cela ne valide pas le test global à 100% pour autant.
+ * 2- Cela permet de skip le test et de ne pas retourner d'erreurs mais cela ne 
+ * valide pas le test global à 100% pour autant.
+ * 
+ * Réponse Question 4 du TP:
+ * On peut les rentrer manuelement via un argument transmis au constructeur ou 
+ * le faire via un compteur
+ * 
+ * avantage/inconvénient: 
+ * compteur : Les numéros sont uniques/On ne choisit pas le numéro d'une personne
+ * atomic integer : Les numeros sont.....
 */
 /**
  *
  * @author audranmalosse
  */
 public class Test_Personne {
+    
+    private Personne alan = new Personne("Turing", "Alan", 1912);
+    private Personne alan2 = new Personne("Turing2", "Alan2", 1913);
 
     public Test_Personne() {
+        
     }
 
     @BeforeClass
@@ -45,10 +58,10 @@ public class Test_Personne {
     /**
      * Test of getNumero method, of class Personne.
      */
-    @Ignore
+    
     @Test
     public void testGetNumero() {
-        fail("Test à implémenter plus tard");
+        assertEquals(1, alan.getNumero());
     }
 
     /**
@@ -56,7 +69,6 @@ public class Test_Personne {
      */
     @Test
     public void testGetNom() {
-        Personne alan = new Personne("Turing", "Alan", 1912);
         assertEquals("Turing", alan.getNom());
     }
 
@@ -65,7 +77,6 @@ public class Test_Personne {
      */
     @Test
     public void testGetPrenom() {
-        Personne alan = new Personne("Turing", "Alan", 1912);
         assertEquals("Alan", alan.getPrenom());
     }
 
@@ -74,28 +85,26 @@ public class Test_Personne {
      */
     @Test
     public void testGetAnNaissance() {
-        Personne alan = new Personne("Turing", "Alan", 1912);
         assertEquals(1912, alan.getAnNaissance());
     }
 
     /**
      * Test of getDernierNum method, of class Personne.
      */
-    @Ignore
+
     @Test
     public void testGetDernierNum() {
-        fail("Test à implémenter plus tard");
+        assertEquals(0,Personne.getDernierNum());
     }
 
     /**
      * Test of setNumPers method, of class Personne.
      */
-    @Ignore
+
     @Test
     public void testSetNumPers() {
-        Personne alan = new Personne("Turing", "Alan", 1912);
-        alan.setNumPers(18);
-        assertEquals(18, alan.getNumero());
+        alan2.setNumPers(18);
+        assertEquals(18, alan2.getNumero());
     }
 
     /**
@@ -103,9 +112,8 @@ public class Test_Personne {
      */
     @Test
     public void testSetNomPers() {
-        Personne alan = new Personne("Turing","Alan", 1912);
-        alan.setNomPers("Minsky");
-        assertEquals("Minsky", alan.getNom());
+        alan2.setNomPers("Minsky");
+        assertEquals("Minsky", alan2.getNom());
     }
 
     /**
@@ -114,9 +122,8 @@ public class Test_Personne {
     @Test
     public void testSetPrenomPers() {
 
-    Personne alan = new Personne("Turing", "Alan", 1912);
-        alan.setPrenomPers("Marvin");
-        assertEquals("Marvin", alan.getPrenom());
+        alan2.setPrenomPers("Marvin");
+        assertEquals("Marvin", alan2.getPrenom());
     }
 
     /**
@@ -124,9 +131,8 @@ public class Test_Personne {
      */
     @Test
     public void testSetAnNaissance() {
-        Personne alan = new Personne("Turing", "Alan", 1912);
-        alan.setAnNaissance(1990);
-        assertEquals(1990, alan.getAnNaissance());
+        alan2.setAnNaissance(1990);
+        assertEquals(1990, alan2.getAnNaissance());
     }
 
     /**
@@ -134,7 +140,6 @@ public class Test_Personne {
      */
     @Test
     public void testToString() {
-        Personne alan = new Personne("Turing", "Alan", 1912);
-        assertEquals("Turing, Alan, 1912", alan.toString());
+        assertEquals("1, Turing, Alan, 1912", alan.toString());
     }
 }
