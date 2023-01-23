@@ -32,8 +32,8 @@ import org.junit.Ignore;
  */
 public class Test_Personne {
     
-    private Personne alan = new Personne("Turing", "Alan", 1912);
-    private Personne alan2 = new Personne("Turing2", "Alan2", 1913);
+    private static Personne alan;
+    private static Personne alan2;
 
     public Test_Personne() {
         
@@ -41,6 +41,8 @@ public class Test_Personne {
 
     @BeforeClass
     public static void setUpClass() {
+        alan = new Personne("Turing", "Alan", 1912);
+        alan2 = new Personne("Turing2", "Alan2", 1913);
     }
 
     @AfterClass
@@ -94,7 +96,7 @@ public class Test_Personne {
 
     @Test
     public void testGetDernierNum() {
-        assertEquals(0,Personne.getDernierNum());
+        assertEquals(3,Personne.getDernierNum());
     }
 
     /**

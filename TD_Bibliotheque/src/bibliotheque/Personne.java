@@ -17,7 +17,7 @@ public class Personne {
     private static AtomicInteger dernierNumero;
     
     static {
-        dernierNumero = new AtomicInteger(0);
+        dernierNumero = new AtomicInteger(1);
     }
     
     public Personne(String nom, String prenom, int anneeNaissance){
