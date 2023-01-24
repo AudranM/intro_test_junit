@@ -5,7 +5,7 @@
 package bibliotheque;
 
 /**
- *
+ * Version stable
  * @author audranmalosse
  */
 public class TD_Bibliotheque {
@@ -16,5 +16,5 @@ public class TD_Bibliotheque {
     public static void main(String[] args) {
         // TODO code application logic here
     }
-    
+
 }
