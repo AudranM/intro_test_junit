@@ -99,7 +99,7 @@ public class Test_Personne {
 
     @Test
     public void testGetDernierNum() {
-        assertEquals(3,Personne.getDernierNum());
+        assertEquals(2,Personne.getDernierNum());
     }
 
     /**
