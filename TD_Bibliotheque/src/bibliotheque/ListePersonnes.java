@@ -13,6 +13,7 @@ import java.util.*;
 public class ListePersonnes {
 
     private List<Personne> registre;
+    private Iterator<Personne> iter ;
 
     public ListePersonnes() {
         registre = new ArrayList();
@@ -27,10 +28,22 @@ public class ListePersonnes {
     }
 
     public boolean nomPrenomAppartient(String nom, String prenom) {
+        iter = registre.iterator();
+        while (iter.hasNext()){
+            Personne p = iter.next();
+            if (p.getNom().equals(nom) && p.getPrenom().equals(prenom))
+                return true;
+        }
         return false;
     }
     
     public String toString(){
-        return "Hello World ! \n";
+        iter = registre.iterator();
+        String res = "";
+        while (iter.hasNext()){
+            Personne p = iter.next();
+            res += p.toString() + "\n";
+        }
+        return res;
     }
 }

@@ -37,7 +37,8 @@ import org.junit.Ignore;
  */
 public class Test_ListePersonnes {
 
-    private static ListePersonnes liste;
+    private static ListePersonnes liste1;
+    private static ListePersonnes liste2;
 
     public Test_ListePersonnes() {
         
@@ -45,7 +46,8 @@ public class Test_ListePersonnes {
 
     @BeforeClass
     public static void setUpClass() {
-        liste = new ListePersonnes();
+        liste1 = new ListePersonnes();
+        liste2 = new ListePersonnes();
     }
 
     @AfterClass
@@ -67,8 +69,8 @@ public class Test_ListePersonnes {
     @Test
     public void testAjouter() {
         Personne alan2 = new Personne("Turing2", "Alan2", 1913);
-        liste.ajouter(alan2);
-        assertEquals(true, liste.personneAppartient(alan2));
+        liste1.ajouter(alan2);
+        assertEquals(true, liste1.personneAppartient(alan2));
     }
     
      /**
@@ -78,8 +80,8 @@ public class Test_ListePersonnes {
     @Test
     public void testPersonneAppartient() {
         Personne alan = new Personne("Turing", "Alan", 1912);
-        liste.ajouter(alan);
-        assertEquals(true, liste.personneAppartient(alan));
+        liste1.ajouter(alan);
+        assertEquals(true, liste1.personneAppartient(alan));
     }
     
      /**
@@ -89,8 +91,8 @@ public class Test_ListePersonnes {
     @Test
     public void testNomPrenomAppartient() {
         Personne alan = new Personne("Turing", "Alan", 1912);
-        liste.ajouter(alan);
-        assertEquals(true, liste.nomPrenomAppartient("Turing", "Alan"));
+        liste1.ajouter(alan);
+        assertEquals(true, liste1.nomPrenomAppartient("Turing", "Alan"));
     }
 
     /**
@@ -99,8 +101,10 @@ public class Test_ListePersonnes {
     @Test
     public void testToString() {
         Personne alan3 = new Personne("Turing3", "Alan3", 1914);
-        liste.ajouter(alan3);
-        assertEquals("Turring3, Alan3, 1914", liste.toString());
+        Personne alan4 = new Personne("Turing4", "Alan4", 1919);
+        liste2.ajouter(alan3);
+        liste2.ajouter(alan4);
+        assertEquals("3, Turing3, Alan3, 1914\n4, Turing4, Alan4, 1919\n", liste2.toString());
     }
 }
 
