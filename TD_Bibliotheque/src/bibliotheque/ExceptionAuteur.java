@@ -5,8 +5,8 @@
 package bibliotheque;
 
 /**
- * Cette classe étend la classe Exception et représente une exception d'auteur.
- * 
+ * ExceptionAuteur est une classe qui hérite d'Exception et qui est utilisée pour 
+ * lancer des exceptions lorsqu'aucun livre de cet auteur n'est trouvé
  * @author audranmalosse
  */
 public class ExceptionAuteur extends Exception {
