@@ -6,6 +6,8 @@ import bibliotheque.Personne;
 import bibliotheque.ListePersonnes;
 import bibliotheque.Livre;
 import bibliotheque.Bibliotheque;
+import bibliotheque.ExceptionAuteur;
+import bibliotheque.ExceptionTitre;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -19,7 +21,7 @@ import org.junit.Ignore;
  */
 public class BibliothequeTest {
 
-    private static Personne p1, p2;
+    private static Personne p1, p2, p3;
     private static Livre L1, L2;
     private static Bibliotheque biblio, biblio2;
 
@@ -60,9 +62,9 @@ public class BibliothequeTest {
         assertEquals(true, biblio.livreAppartient(test));
     }
     
-     /**
-     * 
-     */
+    /**
+    * 
+    */
     
     @Test
     public void testLivreAppartient() {
@@ -70,6 +72,38 @@ public class BibliothequeTest {
         biblio.ajouter(test);
         assertEquals(true, biblio.livreAppartient(test));
     }
+    
+    /**
+    * 
+    */
+    @Test
+    public void testRechercheAuteur() {
+        try{
+            Personne p3 = new Personne("Nouvel", "Auteur", 2010);
+            Livre test = new Livre("Algo", 200, p3);
+            biblio.ajouter(test);
+            assertEquals(test.toString(),biblio.rechercheAuteur("Nouvel", "Auteur"));
+        }
+        catch(ExceptionAuteur e){
+            fail("Erreur lors de la recherche Auteur");
+        }
+    }
+    
+    /**
+    * 
+    */
+    @Test
+    public void testRechercheTitre() {
+        try{
+            Livre test2 = new Livre("LeNouveauTitre", 200, p2);
+            biblio.ajouter(test2);
+            assertEquals(test2.toString(),biblio.rechercheTitre("LeNouveauTitre"));
+        }
+        
+        catch(ExceptionTitre e){
+            fail("Erreur lors de la recherche de titre");
+        }
+    }    
     
     /**
      * 
@@ -80,5 +114,8 @@ public class BibliothequeTest {
         biblio2.ajouter(L2);
         assertEquals("1, Tata, Toto Tutu, 250p.\n2, Algo, Remi Watrigant, 200p.\n", biblio2.toString());
     }
+    
 }
+
+
 
