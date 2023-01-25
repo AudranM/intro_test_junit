@@ -122,10 +122,12 @@ public class Livre {
     }
 
     /**
-    * Retourne une chaîne de caractères contenant les informations sur le livre, telles que le numéro, le titre, l'auteur et le nombre de pages.
+    * Retourne une chaîne de caractères contenant les informations sur le livre: 
+    * son numéro, son titre, son auteur et son nombre de pages.
     * 
     * @return une chaîne de caractères contenant les informations sur le livre
     */
+    @Override
     public String toString() {
         return this.getNumLivre() + ", "
                 + this.getTitre() + ", "

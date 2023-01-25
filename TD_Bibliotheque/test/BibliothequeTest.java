@@ -80,9 +80,11 @@ public class BibliothequeTest {
     public void testRechercheAuteur() {
         try{
             Personne p3 = new Personne("Nouvel", "Auteur", 2010);
-            Livre test = new Livre("Algo", 200, p3);
-            biblio.ajouter(test);
-            assertEquals(test.toString(),biblio.rechercheAuteur("Nouvel", "Auteur"));
+            Livre livreTest = new Livre("Algo", 200, p3);
+            Bibliotheque biblioTest = new Bibliotheque ();
+            biblioTest.ajouter(livreTest);
+            biblio.ajouter(livreTest);
+            assertEquals(biblioTest.toString(), biblio.rechercheAuteur("Nouvel", "Auteur").toString());
         }
         catch(ExceptionAuteur e){
             fail("Erreur lors de la recherche Auteur");
@@ -95,9 +97,11 @@ public class BibliothequeTest {
     @Test
     public void testRechercheTitre() {
         try{
-            Livre test2 = new Livre("LeNouveauTitre", 200, p2);
-            biblio.ajouter(test2);
-            assertEquals(test2.toString(),biblio.rechercheTitre("LeNouveauTitre"));
+            Livre livreTest2 = new Livre("LeNouveauTitre", 200, p2);
+            Bibliotheque biblioTest2 = new Bibliotheque ();
+            biblioTest2.ajouter(livreTest2);
+            biblio.ajouter(livreTest2);
+            assertEquals(biblioTest2.toString(), biblio.rechercheTitre("LeNouveauTitre").toString());
         }
         
         catch(ExceptionTitre e){
