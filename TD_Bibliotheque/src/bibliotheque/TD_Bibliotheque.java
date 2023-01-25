@@ -5,7 +5,6 @@
 package bibliotheque;
 
 /**
- * Version stable
  * @author audranmalosse
  */
 public class TD_Bibliotheque {

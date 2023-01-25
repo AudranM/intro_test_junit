@@ -17,7 +17,7 @@ public class ListePersonnes {
      * @param registre ArrayList contenant des objets de type Personne
      * @param iter Iterator de registre
      */
-    private List<Personne> registre;
+    private final List<Personne> registre;
     private Iterator<Personne> iter;
 
     /**
@@ -71,6 +71,7 @@ public class ListePersonnes {
      *
      * @return le contenu de la liste
      */
+    @Override
     public String toString() {
         iter = registre.iterator();
         String res = "";

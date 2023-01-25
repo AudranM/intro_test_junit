@@ -17,7 +17,7 @@ public class Personne {
 
     private int numeroPers, anNaissance;
     private String nomPers, prenomPers;
-    private static AtomicInteger dernierNumero;
+    private static final AtomicInteger dernierNumero;
 
     static {
         dernierNumero = new AtomicInteger(0);
@@ -31,9 +31,9 @@ public class Personne {
      * @param anneeNaissance l'année de naissance de la personne
      */
     public Personne(String nom, String prenom, int anneeNaissance) {
-        this.setNomPers(nom);
-        this.setPrenomPers(prenom);
-        this.setAnNaissance(anneeNaissance);
+        setNomPers(nom);
+        setPrenomPers(prenom);
+        setAnNaissance(anneeNaissance);
         this.numeroPers = dernierNumero.incrementAndGet();
     }
 
@@ -52,7 +52,7 @@ public class Personne {
      *
      * @param nom le nom de la personne
      */
-    public void setNomPers(String nom) {
+    public final void setNomPers(String nom) {
         this.nomPers = nom;
     }
 
@@ -61,7 +61,7 @@ public class Personne {
      *
      * @param prenom le prénom de la personne
      */
-    public void setPrenomPers(String prenom) {
+    public final void setPrenomPers(String prenom) {
         this.prenomPers = prenom;
     }
 
@@ -70,7 +70,7 @@ public class Personne {
      *
      * @param annee l'année de naissance de la personne
      */
-    public void setAnNaissance(int annee) {
+    public final void setAnNaissance(int annee) {
         this.anNaissance = annee;
     }
 

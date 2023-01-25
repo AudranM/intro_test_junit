@@ -29,9 +29,11 @@ public class Livre {
     }
     /**
      * Constructeur qui prend en paramètre le titre, le nombre de pages et 
-     * l'auteur du livre.
-     * Il initialise également le numéro du livre en utilisant l'objet 
-     * AtomicInteger pour générer un numéro unique.
+     * l'auteur du livre.Il initialise également le numéro du livre en utilisant l'objet 
+ AtomicInteger pour générer un numéro unique.
+     * @param titre le titre du livre
+     * @param nbPages le nombre de pages du livre
+     * @param auteur l'auteur du livre
      */
     public Livre(String titre, int nbPages, Personne auteur) {
         this.setTitre(titre);
@@ -90,7 +92,7 @@ public class Livre {
      * 
      * @param NumLivre le nouveau numéro du livre
      */
-    public void setNumLivre(int NumLivre) {
+    public final void setNumLivre(int NumLivre) {
         this.NumLivre = NumLivre;
     }
 
@@ -99,7 +101,7 @@ public class Livre {
      * 
      * @param titre le nouveau titre du livre
      */
-    public void setTitre(String titre) {
+    public final void setTitre(String titre) {
         this.titre = titre;
     }
 
@@ -108,7 +110,7 @@ public class Livre {
     * 
     * @param nombreDePages le nouveau nombre de pages du livre
     */
-    public void setNombreDePages(int nombreDePages) {
+    public final void setNombreDePages(int nombreDePages) {
         this.nombreDePages = nombreDePages;
     }
 
@@ -117,7 +119,7 @@ public class Livre {
     * 
     * @param auteur le nouvel auteur du livre
     */
-    public void setAuteur(Personne auteur) {
+    public final void setAuteur(Personne auteur) {
         this.auteur = auteur;
     }
 
