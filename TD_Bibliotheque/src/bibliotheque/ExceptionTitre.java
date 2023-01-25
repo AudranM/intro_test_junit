@@ -8,7 +8,7 @@ package bibliotheque;
  * ExceptionTitre est une classe qui hérite d'Exception et qui est utilisée pour 
  * lancer des exceptions lorsque le titre d'un élément est invalide.
  * 
- * @author Nom de l'auteur
+ * @author audranmalosse
  */
 
 
