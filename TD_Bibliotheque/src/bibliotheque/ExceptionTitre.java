@@ -11,8 +11,14 @@ package bibliotheque;
  * @author Nom de l'auteur
  */
 
+
 public class ExceptionTitre extends Exception {
     
+    /**
+     * Constructeur de la classe ExceptionTitre.
+     * 
+     * @param message Message à afficher lorsque l'exception est lancée.
+     */
     public ExceptionTitre(String message) {
         super(message);
     }
