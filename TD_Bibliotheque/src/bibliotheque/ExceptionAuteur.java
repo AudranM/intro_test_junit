@@ -5,11 +5,17 @@
 package bibliotheque;
 
 /**
- *
+ * Cette classe étend la classe Exception et représente une exception d'auteur.
+ * 
  * @author audranmalosse
  */
 public class ExceptionAuteur extends Exception {
 
+    /**
+     * Constructeur qui prend un message en paramètre
+     * 
+     * @param message Le message à afficher
+     */
     public ExceptionAuteur(String message) {
         super(message);
     }
